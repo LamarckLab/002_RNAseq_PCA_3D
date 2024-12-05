@@ -1,5 +1,5 @@
 # 安装并加载必要的包
-install.packages(c("readr", "ggplot2", "vegan", "plotly"))
+# install.packages(c("readr", "ggplot2", "vegan", "plotly"))
 library(readr)
 library(ggplot2)
 library(vegan)
@@ -17,7 +17,7 @@ data <- data[, -1]  # 移除基因名称列
 data <- data[rowSums(data != 0) > 0, ]
 
 # 提取分组信息
-group <- ifelse(grepl("^control", colnames(data)), "PTSD", "Healthy")  # 根据列名生成分组信息
+group <- ifelse(grepl("^control", colnames(data)), "Control", "Treated")  # 根据列名生成分组信息
 
 # 确保数据为数值型矩阵
 data <- as.matrix(data)
